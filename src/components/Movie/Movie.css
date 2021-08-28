@@ -1,0 +1,19 @@
+.movie {
+  background-color: #1E1F25;
+  box-shadow: none;
+}
+.movie:hover {
+  transform: scale(1.1);
+  background-color: #1E1F25;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+.movie img {
+  height: 350px;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+  padding: 10px 10px 10px 15px;
+}

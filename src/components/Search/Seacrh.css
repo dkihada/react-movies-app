@@ -1,0 +1,32 @@
+.search-btn {
+  position: absolute;
+  top: 4px;
+  right: 0.5rem;
+}
+.filter {
+  display: flex;
+  gap: 2rem;
+}
+.row .filter label span:after {
+  border: #607d8b;
+  background-color: #607d8b;
+}
+.input-field input.validate {
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0 0 0 15px;
+}
+.input-field input.validate::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+.input-field button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
