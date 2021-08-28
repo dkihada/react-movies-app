@@ -2,7 +2,7 @@
   "name": "movies-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dkihada.github.io/my_pet_project/react/movies-project",
+  "homepage": "https://dkihada.github.io/react-movies-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
