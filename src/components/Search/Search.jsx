@@ -1,42 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Seacrh.css";
 
-class Search extends React.Component {
-  state = {
-    search: "",
-  };
+function Search(props) {
+  const { searchMovie } = props;
 
-  handleKey = (e) => {
+  const [search, setSearch] = useState();
+
+  const handleKey = (e) => {
     if (e.key === "Enter") {
-      this.props.searchMovie(this.state.search);
+      searchMovie(search);
     }
   };
 
-  render() {
-    return (
-      <div className='row'>
-        <div className='input-field'>
-          <input
-            placeholder='Search movies...'
-            type='search'
-            className='validate'
-            value={this.state.search}
-            onChange={(e) => this.setState({ search: e.target.value })}
-            onKeyDown={this.handleKey}
-            checked
-          />
-          <button
-            className='btn blue-grey search-btn'
-            onClick={() => {
-              this.props.searchMovie(this.state.search);
-            }}
-          >
-            Search
-          </button>
-        </div>
+  return (
+    <div className='row'>
+      <div className='input-field'>
+        <input
+          placeholder='Search movies...'
+          type='search'
+          className='validate'
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKey}
+          checked
+        />
+        <button
+          className='btn blue-grey search-btn'
+          onClick={() => {
+            searchMovie(search);
+          }}
+        >
+          Search
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export { Search };
