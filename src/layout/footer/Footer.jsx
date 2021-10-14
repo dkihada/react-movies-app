@@ -1,22 +1,18 @@
-import "./Footer.css";
+import './Footer.css';
 
 function Footer() {
-  return (
-    <footer className='page-footer'>
-      <div className='footer-copyright'>
-        <div className='container'>
-          © {new Date().getFullYear()} Copyright Text
-          <a
-            className='grey-text text-lighten-4 right'
-            href='https://github.com/dkihada/my_pet_project/tree/main/react/movies-project'
-            target='_blank'
-          >
-            GitHub Repo
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className='page-footer'>
+			<div>© {new Date().getFullYear()} Copyright Text</div>
+			<a
+				href='https://github.com/dkihada/my_pet_project/tree/main/react/movies-project'
+				target='_blank'
+				rel='noreferrer'
+			>
+				GitHub Repo
+			</a>
+		</footer>
+	);
 }
 
 export { Footer };

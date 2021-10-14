@@ -1,40 +1,52 @@
-import React, { useState } from "react";
-import "./Seacrh.css";
+import React, { useContext, useState } from 'react';
+import './Search.css';
 
-function Search(props) {
-  const { searchMovie } = props;
+import { searchList } from '../../services/API';
+import { StateContext } from '../../services/Context';
 
-  const [search, setSearch] = useState();
+function Search() {
+	const { getMovies } = useContext(StateContext);
 
-  const handleKey = (e) => {
-    if (e.key === "Enter") {
-      searchMovie(search);
-    }
-  };
+	const [search, setSearch] = useState('');
 
-  return (
-    <div className='row'>
-      <div className='input-field'>
-        <input
-          placeholder='Search movies...'
-          type='search'
-          className='validate'
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={handleKey}
-          checked
-        />
-        <button
-          className='btn blue-grey search-btn'
-          onClick={() => {
-            searchMovie(search);
-          }}
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  );
+	const handleKey = (e) => {
+		if (e.key === 'Enter') {
+			searchMovie(search);
+		}
+	};
+
+	const searchMovie = (str) => {
+		searchList(str)
+			.then((data) => {
+				getMovies(data.films);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
+	return (
+		<div className='search'>
+			<div className='input-field'>
+				<input
+					placeholder='Введите для поиска'
+					type='search'
+					value={search}
+					onChange={(e) => setSearch(e.target.value)}
+					onKeyDown={handleKey}
+					checked
+				/>
+				<button
+					className='search-btn'
+					onClick={() => {
+						searchMovie(search);
+					}}
+				>
+					Поиск
+				</button>
+			</div>
+		</div>
+	);
 }
 
 export { Search };

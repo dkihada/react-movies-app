@@ -1,0 +1,13 @@
+.sidebar.back {
+	width: 50%;
+	margin: 0 auto;
+	padding: 4px;
+
+	cursor: pointer;
+
+	user-select: none;
+
+	border: 1.5px solid yellow;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(220, 223, 6, 0.8);
+}

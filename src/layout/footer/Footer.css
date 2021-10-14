@@ -1,3 +1,19 @@
 .page-footer {
-  background-color: #1E1F25;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+
+	align-items: center;
+
+	height: 40px;
+	margin-top: 40px;
+
+	color: var(--white);
+
+	background-color: dimgray;
+	box-shadow: 0 0 10px rgba(216 216 216 / 20%);
+}
+
+.page-footer a {
+	color: var(--white);
 }

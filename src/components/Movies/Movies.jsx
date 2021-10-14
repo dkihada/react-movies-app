@@ -1,20 +1,22 @@
-import "./Movies.css";
-import { Movie } from "../Movie/Movie";
+import './Movies.css';
+import { Movie } from '../Movie/Movie';
+import { StateContext } from '../../services/Context';
+import { useContext } from 'react';
 
-function Movies(props) {
-  const { movies = [] } = props;
+function Movies() {
+	const { movies } = useContext(StateContext);
 
-  return (
-    <div className='movies'>
-      {movies.length ? (
-        movies.map((movie) => {
-          return <Movie key={movie.filmId} {...movie} />;
-        })
-      ) : (
-        <p className='white-text'> Nothing found </p>
-      )}
-    </div>
-  );
+	return (
+		<div className='movies'>
+			{movies.length ? (
+				movies.map((movie) => {
+					return <Movie key={movie.filmId} {...movie} />;
+				})
+			) : (
+				<p className='nothing'> Nothing found </p>
+			)}
+		</div>
+	);
 }
 
 export { Movies };

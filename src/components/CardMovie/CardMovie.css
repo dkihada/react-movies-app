@@ -1,0 +1,21 @@
+.card-movie {
+	display: grid;
+	grid-template-columns: auto 1fr;
+
+	gap: 50px;
+}
+
+.card-movie img {
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(220, 223, 6, 1);
+}
+
+.card-movie__body {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.card-movie__slogan {
+	color: yellow;
+}

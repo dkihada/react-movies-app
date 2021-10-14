@@ -1,19 +1,55 @@
 .movie {
-  background-color: #1E1F25;
-  box-shadow: none;
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+
+	transition: all 0.3s;
+
+	border-radius: 5px;
+	background-color: #333;
+	box-shadow: none;
 }
+
+.movies img {
+	flex-grow: 1;
+
+	width: 100%;
+
+	border-radius: 5px 5px 0 0;
+}
+
 .movie:hover {
-  transform: scale(1.1);
-  background-color: #1E1F25;
-  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+	transform: scale(1.02);
+
+	box-shadow: 0 0 10px rgba(220, 223, 6, 1);
 }
+
 .movie img {
-  height: 350px;
+	height: 380px;
+}
+
+.card.movie {
+	height: 100%;
+}
+
+.card-title {
+	color: var(--white);
+
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 24px;
 }
 
 .card .card-content {
-  display: flex;
-  flex-direction: column;
-  flex-flow: column-reverse;
-  padding: 10px 10px 10px 15px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
+
+	padding: 10px 10px 10px 15px;
+}
+
+.card-content p {
+	color: yellow;
 }

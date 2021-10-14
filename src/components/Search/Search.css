@@ -1,0 +1,80 @@
+.search-btn {
+	height: 45px;
+
+	margin-left: 5px;
+	padding: 0 15px;
+
+	cursor: pointer;
+	transition: all 0.4s;
+
+	border-style: none;
+
+	border-radius: 5px;
+	background-color: var(--white);
+}
+
+.search-btn:hover {
+	background-color: rgba(220, 223, 6, 1);
+}
+
+.filter {
+	display: flex;
+	gap: 2rem;
+}
+
+.input-field input {
+	box-sizing: border-box;
+	width: 200px;
+	height: 45px;
+	padding: 0 10px 0 15px;
+
+	border-style: none;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(126, 125, 125, 0.6);
+
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		'Montserrat',
+		'Segoe UI',
+		'Roboto',
+		'Oxygen',
+		'Ubuntu',
+		'Cantarell',
+		'Fira Sans',
+		'Droid Sans',
+		'Helvetica Neue',
+		sans-serif;
+}
+
+.input-field input::placeholder {
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		'Montserrat',
+		'Segoe UI',
+		'Roboto',
+		'Oxygen',
+		'Ubuntu',
+		'Cantarell',
+		'Fira Sans',
+		'Droid Sans',
+		'Helvetica Neue',
+		sans-serif;
+}
+
+.input-field button {
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		'Montserrat',
+		'Segoe UI',
+		'Roboto',
+		'Oxygen',
+		'Ubuntu',
+		'Cantarell',
+		'Fira Sans',
+		'Droid Sans',
+		'Helvetica Neue',
+		sans-serif;
+}
