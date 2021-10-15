@@ -5,7 +5,6 @@ import { Tag } from '../Tag/Tag';
 
 function CardMovie() {
 	const { film, trailer } = useContext(StateContext);
-
 	return (
 		<div className='card-movie'>
 			<img src={film.posterUrlPreview} alt={film.nameRu} />
@@ -42,18 +41,19 @@ function CardMovie() {
 					<br />
 					{film.description}
 				</p>
-				<div></div>
 			</div>
-			{/* {trailer.url ? (
-				<iframe
-					width='550px'
-					height='300px'
-					title={trailer.name}
-					src={trailer.url}
-				>
-					{trailer.name}
-				</iframe>
-			) : null} */}
+			{/* {trailer
+				? trailer.map((vid) => (
+						<iframe
+							frameborder='none'
+							width='550px'
+							height='300px'
+							title={trailer.name}
+							src={`https://www.youtube.com/embed/${vid.url.slice(-11)}`}
+							key={vid.name}
+						></iframe>
+				  ))
+				: null} */}
 		</div>
 	);
 }
