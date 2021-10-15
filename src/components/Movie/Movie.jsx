@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Movie.css';
+import styles from './Movie.module.css';
 import cn from 'classnames';
 
 function Movie(props) {
@@ -7,12 +7,12 @@ function Movie(props) {
 
 	return (
 		<Link to={`/film/${id}`}>
-			<div id={id} className='card movie'>
-				<div className='card-image'>
+			<div id={id} className={styles.movie}>
+				<div>
 					<img src={poster} alt={title} />
 				</div>
-				<div className='card-content'>
-					<span className='card-title'>
+				<div className={styles.content}>
+					<span className={styles.title}>
 						{title !== undefined && title.length > 30
 							? title.slice(0, 25) + '...'
 							: title}
@@ -20,11 +20,11 @@ function Movie(props) {
 					<p>
 						{year}{' '}
 						<span
-							className={cn('movie__rate', {
-								rate_high: rating >= 7,
-								rate_middle: rating >= 5 && rating < 7,
-								rate_low: rating < 5,
-								rate_await: rating.includes('%'),
+							className={cn(styles.rate, {
+								[styles.high]: rating >= 7,
+								[styles.middle]: rating >= 5 && rating < 7,
+								[styles.low]: rating < 5,
+								[styles.await]: rating.includes('%'),
 							})}
 						>
 							{rating !== 'null'

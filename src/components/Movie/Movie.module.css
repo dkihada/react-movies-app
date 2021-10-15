@@ -5,6 +5,7 @@
 	flex-direction: column;
 
 	width: 100%;
+	height: 100%;
 
 	transition: all 0.3s;
 
@@ -13,10 +14,11 @@
 	box-shadow: none;
 }
 
-.movies img {
+.movie img {
 	flex-grow: 1;
 
 	width: 100%;
+	height: 380px;
 
 	border-radius: 5px 5px 0 0;
 }
@@ -27,15 +29,7 @@
 	box-shadow: 0 0 10px rgba(220, 223, 6, 1);
 }
 
-.movie img {
-	height: 380px;
-}
-
-.card.movie {
-	height: 100%;
-}
-
-.card-title {
+.title {
 	color: var(--white);
 
 	font-size: 22px;
@@ -43,7 +37,7 @@
 	line-height: 24px;
 }
 
-.card .card-content {
+.content {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
@@ -52,46 +46,56 @@
 	padding: 10px 10px 10px 15px;
 }
 
-.card-content p {
+.content p {
 	color: yellow;
 }
 
-.movie__rate {
+.rate {
 	position: absolute;
-	top: 5px;
-	right: 5px;
+	top: 0;
+	right: 0;
 
 	padding: 5px 10px;
 
 	color: white;
 
-	border-radius: 8px;
+	border-radius: 0 0 0 8px;
 }
 
-.rate_high {
-	border: 2px solid green;
+.high {
+	color: limegreen;
+	border: 1px solid limegreen;
 
-	background: rgba(0, 0, 0, 0.7);
-	box-shadow: 0 0 3px green;
+	background: rgba(0, 0, 0, 0.9);
+	box-shadow: 0 0 3px limegreen;
+
+	font-weight: bold;
 }
 
-.movie__rate.rate_middle {
-	border: 2px solid orange;
+.middle {
+	color: orange;
+	border: 1px solid orange;
 
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.9);
 	box-shadow: 0 0 3px orange;
+
+	font-weight: bold;
 }
 
-.movie__rate.rate_low {
-	border: 2px solid red;
-
-	background: rgba(0, 0, 0, 0.7);
+.low {
+	color: red;
+	border: 1px solid red;
+	background: rgba(0, 0, 0, 0.9);
 	box-shadow: 0 0 3px red;
+
+	font-weight: bold;
 }
 
-.movie__rate.rate_await {
+.await {
 	border: 1px solid white;
 
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.9);
 	box-shadow: 0 0 3px white;
+
+	font-weight: bold;
 }
