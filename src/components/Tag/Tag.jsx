@@ -1,7 +1,7 @@
-import './Tag.css';
+import styles from './Tag.module.css';
 
 function Tag({ children }) {
-	return <span className='tag'>{children}</span>;
+	return <span className={styles.tag}>{children}</span>;
 }
 
 export { Tag };
