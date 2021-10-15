@@ -1,4 +1,6 @@
 .movie {
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 
@@ -52,4 +54,44 @@
 
 .card-content p {
 	color: yellow;
+}
+
+.movie__rate {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+
+	padding: 5px 10px;
+
+	color: white;
+
+	border-radius: 8px;
+}
+
+.rate_high {
+	border: 2px solid green;
+
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 3px green;
+}
+
+.movie__rate.rate_middle {
+	border: 2px solid orange;
+
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 3px orange;
+}
+
+.movie__rate.rate_low {
+	border: 2px solid red;
+
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 3px red;
+}
+
+.movie__rate.rate_await {
+	border: 1px solid white;
+
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 3px white;
 }

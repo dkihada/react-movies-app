@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Movie.css';
+import cn from 'classnames';
 
 function Movie(props) {
 	const { nameRu: title, year, filmId: id, rating, posterUrl: poster } = props;
@@ -7,8 +8,8 @@ function Movie(props) {
 	return (
 		<Link to={`/film/${id}`}>
 			<div id={id} className='card movie'>
-				<div className='card-image waves-effect waves-block waves-light'>
-					<img className='activator' src={poster} alt={title} />
+				<div className='card-image'>
+					<img src={poster} alt={title} />
 				</div>
 				<div className='card-content'>
 					<span className='card-title'>
@@ -17,7 +18,21 @@ function Movie(props) {
 							: title}
 					</span>
 					<p>
-						{year} <span className='right'>{rating}</span>
+						{year}{' '}
+						<span
+							className={cn('movie__rate', {
+								rate_high: rating >= 7,
+								rate_middle: rating >= 5 && rating < 7,
+								rate_low: rating < 5,
+								rate_await: rating.includes('%'),
+							})}
+						>
+							{rating !== 'null'
+								? rating.includes('%')
+									? `Ожидает ${rating}`
+									: rating
+								: null}
+						</span>
 					</p>
 				</div>
 			</div>
