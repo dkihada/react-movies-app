@@ -9,28 +9,34 @@ const InitialState = {
 	pages: 0,
 	loading: true,
 	trailer: [],
+	type: {
+		_currentType: 'TOP_100_POPULAR_FILMS',
+		_top_100: 'TOP_100_POPULAR_FILMS',
+		_top_250: 'top_250_best_films',
+		_top_await: 'TOP_AWAIT_FILMS',
+	},
 };
 
 export const StateProvider = ({ children }) => {
-	const [movies, setMovies] = useReducer(reducer, InitialState);
+	const [state, dispatch] = useReducer(reducer, InitialState);
 
-	movies.getMovies = (data) => {
-		setMovies({ type: 'GET_MOVIES', payload: data });
+	state.getMovies = (data) => {
+		dispatch({ type: 'GET_MOVIES', payload: data });
 	};
 
-	movies.getFilm = (data) => {
-		setMovies({ type: 'GET_FILM', payload: data });
+	state.getFilm = (data) => {
+		dispatch({ type: 'GET_FILM', payload: data });
 	};
 
-	movies.getPages = (data) => {
-		setMovies({ type: 'GET_PAGES', payload: data });
+	state.getPages = (data) => {
+		dispatch({ type: 'GET_PAGES', payload: data });
 	};
 
-	movies.getTrailerLink = (data) => {
-		setMovies({ type: 'GET_TRAILER', payload: data });
+	state.getTrailerLink = (data) => {
+		dispatch({ type: 'GET_TRAILER', payload: data });
 	};
 
 	return (
-		<StateContext.Provider value={movies}>{children}</StateContext.Provider>
+		<StateContext.Provider value={state}>{children}</StateContext.Provider>
 	);
 };
