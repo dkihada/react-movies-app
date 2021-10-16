@@ -1,0 +1,33 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-top: 50px;
+
+	list-style-type: none;
+	gap: 40px;
+}
+
+.li {
+	padding: 5px 10px;
+
+	cursor: pointer;
+
+	border-radius: 5px;
+}
+
+.li:hover {
+	color: black;
+	background: yellow;
+	box-shadow: 0 0 10px rgba(220, 223, 6, 0.8);
+}
+
+.selected {
+	color: yellow;
+	border: 1px solid yellow;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(220, 223, 6, 0.8);
+
+	font-weight: bold;
+}
