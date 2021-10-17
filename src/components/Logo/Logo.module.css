@@ -1,0 +1,23 @@
+.logo {
+	display: flex;
+	align-items: flex-end;
+
+	height: 55px;
+	margin-bottom: 20px;
+
+	cursor: pointer;
+
+	user-select: none;
+
+	color: var(--primary);
+
+	font-size: 38px;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.logo svg {
+	fill: var(--primary);
+}
