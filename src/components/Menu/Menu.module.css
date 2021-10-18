@@ -1,0 +1,30 @@
+.menu {
+	display: grid;
+
+	margin-top: 45px;
+	gap: 25px;
+}
+
+.menu li {
+	padding-left: 15px;
+
+	list-style-type: none;
+
+	cursor: pointer;
+}
+
+.menu a {
+	text-decoration: none;
+
+	color: white;
+}
+
+.menu li:hover {
+	transition: all 0.3s;
+
+	color: var(--primary);
+}
+
+.menu a.active {
+	color: var(--primary);
+}

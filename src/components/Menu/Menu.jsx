@@ -1,35 +1,22 @@
-import './Menu.css';
-import { getTop100, getTop250, getTopAwait } from '../../services/API';
+import styles from './Menu.module.css';
+import { getTopMovies } from '../../services/API';
 import { useContext } from 'react';
 import { StateContext } from '../../services/Context';
+import { Link, useLocation } from 'react-router-dom';
+import cn from 'classnames';
 
 function Menu() {
-	const { getMovies } = useContext(StateContext);
+	const { getMovies, getPages, getSearch, type } = useContext(StateContext);
 
-	const getMovie250 = () => {
-		getTop250()
-			.then((data) => {
-				getMovies(data.films);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
+	const { pathname } = useLocation();
 
-	const getMovie100 = (page = 1) => {
-		getTop100(page)
+	const getMovie = (t) => {
+		getTopMovies(t)
 			.then((data) => {
+				type._currentType = t;
+				getSearch('');
 				getMovies(data.films);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
-
-	const getMovieAwait = () => {
-		getTopAwait()
-			.then((data) => {
-				getMovies(data.films);
+				getPages(data.pagesCount);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -37,10 +24,31 @@ function Menu() {
 	};
 
 	return (
-		<ul className='menu-list'>
-			<li onClick={getMovieAwait}>Ожидаемые фильмы</li>
-			<li onClick={() => getMovie100()}>Популярные фильмы</li>
-			<li onClick={() => getMovie250()}>ТОП 250 Фильмов</li>
+		<ul className={styles.menu}>
+			<Link
+				to={`/${type._top_await}`}
+				className={cn({
+					active: `/${type._top_await}` == pathname,
+				})}
+			>
+				<li onClick={() => getMovie(type._top_await)}>Ожидаемые фильмы</li>
+			</Link>
+			<Link
+				to={`/${type._top_100}`}
+				className={cn({
+					active: `/${type._top_100}` == pathname,
+				})}
+			>
+				<li onClick={() => getMovie(type._top_100)}>Популярные фильмы</li>
+			</Link>
+			<Link
+				to={`/${type._top_250}`}
+				className={cn({
+					active: `/${type._top_250}` == pathname,
+				})}
+			>
+				<li>ТОП 250 Фильмов</li>
+			</Link>
 		</ul>
 	);
 }
