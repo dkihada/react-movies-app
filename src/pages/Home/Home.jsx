@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 import { Movies } from '../../components/Movies/Movies';
-import { Preloader } from '../../components/Preloader/Preloader';
 import { Sidebar } from '../../layout/sidebar/Sidebar';
 import { StateContext } from '../../services/Context';
 import styles from './Home.module.css';
 
 function Home() {
-	const { loading, search, movies } = useContext(StateContext);
+	const { search, movies } = useContext(StateContext);
 
 	console.log();
 

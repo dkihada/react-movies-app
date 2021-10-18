@@ -28,7 +28,7 @@ function Menu() {
 			<Link
 				to={`/${type._top_await}`}
 				className={cn({
-					[styles.active]: `/${type._top_await}` == pathname,
+					[styles.active]: `/${type._top_await}` === pathname,
 				})}
 			>
 				<li onClick={() => getMovie(type._top_await)}>Ожидаемые фильмы</li>
@@ -36,7 +36,7 @@ function Menu() {
 			<Link
 				to={`/${type._top_100}`}
 				className={cn({
-					[styles.active]: `/${type._top_100}` == pathname,
+					[styles.active]: `/${type._top_100}` === pathname,
 				})}
 			>
 				<li onClick={() => getMovie(type._top_100)}>Популярные фильмы</li>
@@ -44,7 +44,7 @@ function Menu() {
 			<Link
 				to={`/${type._top_250}`}
 				className={cn({
-					[styles.active]: `/${type._top_250}` == pathname,
+					[styles.active]: `/${type._top_250}` === pathname,
 				})}
 			>
 				<li>ТОП 250 Фильмов</li>

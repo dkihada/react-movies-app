@@ -4,7 +4,7 @@ import styles from './CardMovie.module.css';
 import { Tag } from '../Tag/Tag';
 
 function CardMovie() {
-	const { film, trailer } = useContext(StateContext);
+	const { film } = useContext(StateContext);
 
 	return (
 		<div className={styles.card}>
