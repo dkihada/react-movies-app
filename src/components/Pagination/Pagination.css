@@ -1,0 +1,19 @@
+.previous {
+	cursor: pointer;
+}
+
+.previous.disabled {
+	cursor: default;
+}
+
+.next {
+	cursor: pointer;
+}
+
+.next.disabled {
+	cursor: default;
+}
+
+.break {
+	cursor: pointer;
+}
