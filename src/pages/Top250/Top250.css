@@ -1,0 +1,33 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-top: 50px;
+
+	list-style-type: none;
+	gap: 40px;
+}
+
+.li {
+	padding: 5px 10px;
+
+	cursor: pointer;
+
+	border-radius: 5px;
+}
+
+.li:hover {
+	color: black;
+	background: var(--primary);
+	box-shadow: var(--primary-shadow);
+}
+
+.selected {
+	color: var(--primary);
+	border: 1px solid var(--primary);
+	border-radius: 5px;
+	box-shadow: var(--primary-shadow);
+
+	font-weight: bold;
+}
