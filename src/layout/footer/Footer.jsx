@@ -5,7 +5,7 @@ function Footer() {
 		<footer className={styles.footer}>
 			<div>© {new Date().getFullYear()} Copyright Text</div>
 			<a
-				href='https://github.com/dkihada/my_pet_project/tree/main/react/movies-project'
+				href='https://github.com/dkihada/react-movies-app'
 				target='_blank'
 				rel='noreferrer'
 			>

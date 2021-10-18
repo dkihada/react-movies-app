@@ -10,7 +10,7 @@ function Header() {
 			</li>
 			<li>
 				<a
-					href='https://github.com/dkihada/my_pet_project/tree/main/react/movies-project'
+					href='https://github.com/dkihada/react-movies-app'
 					target='_blank'
 					rel='noreferrer'
 				>
