@@ -1,13 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Search.css';
 
 import { searchList } from '../../services/API';
 import { StateContext } from '../../services/Context';
 
 function Search() {
-	const { getMovies } = useContext(StateContext);
-
-	const [search, setSearch] = useState('');
+	const { getMovies, getPages, getSearch, search } = useContext(StateContext);
 
 	const handleKey = (e) => {
 		if (e.key === 'Enter') {
@@ -19,6 +17,7 @@ function Search() {
 		searchList(str)
 			.then((data) => {
 				getMovies(data.films);
+				getPages(data.pagesCount);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -32,7 +31,7 @@ function Search() {
 					placeholder='Введите для поиска'
 					type='search'
 					value={search}
-					onChange={(e) => setSearch(e.target.value)}
+					onChange={(e) => getSearch(e.target.value)}
 					onKeyDown={handleKey}
 					checked
 				/>

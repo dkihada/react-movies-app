@@ -14,7 +14,7 @@
 }
 
 .search-btn:hover {
-	background-color: rgba(220, 223, 6, 1);
+	background-color: var(--primary);
 }
 
 .filter {
@@ -32,49 +32,13 @@
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(126, 125, 125, 0.6);
 
-	font-family:
-		-apple-system,
-		BlinkMacSystemFont,
-		'Montserrat',
-		'Segoe UI',
-		'Roboto',
-		'Oxygen',
-		'Ubuntu',
-		'Cantarell',
-		'Fira Sans',
-		'Droid Sans',
-		'Helvetica Neue',
-		sans-serif;
+	font-family: var(--font-family);
 }
 
 .input-field input::placeholder {
-	font-family:
-		-apple-system,
-		BlinkMacSystemFont,
-		'Montserrat',
-		'Segoe UI',
-		'Roboto',
-		'Oxygen',
-		'Ubuntu',
-		'Cantarell',
-		'Fira Sans',
-		'Droid Sans',
-		'Helvetica Neue',
-		sans-serif;
+	font-family: var(--font-family);
 }
 
 .input-field button {
-	font-family:
-		-apple-system,
-		BlinkMacSystemFont,
-		'Montserrat',
-		'Segoe UI',
-		'Roboto',
-		'Oxygen',
-		'Ubuntu',
-		'Cantarell',
-		'Fira Sans',
-		'Droid Sans',
-		'Helvetica Neue',
-		sans-serif;
+	font-family: var(--font-family);
 }
