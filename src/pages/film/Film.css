@@ -7,7 +7,13 @@
 
 	user-select: none;
 
-	border: 1.5px solid yellow;
+	border: 1.5px solid var(--primary);
 	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(220, 223, 6, 0.8);
+	box-shadow: var(--primary-shadow);
+}
+
+.sidebar.back:hover {
+	transition: all 0.5s;
+
+	background: rgba(220, 223, 6, 0.1);
 }

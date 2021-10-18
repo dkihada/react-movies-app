@@ -8,7 +8,7 @@ import { CardMovie } from '../../components/CardMovie/CardMovie';
 import { getFilmInfo, getTrailer } from '../../services/API';
 
 function Film() {
-	const { loading, getFilm, getTrailerLink } = useContext(StateContext);
+	const { loading, getFilm, getTrailerLink, film } = useContext(StateContext);
 	const { pathname } = useLocation();
 	const { goBack } = useHistory();
 
@@ -25,7 +25,7 @@ function Film() {
 
 		getTrailer(pathname.match(regExpId))
 			.then((data) => {
-				getTrailerLink(data.items[1]);
+				getTrailerLink(data.items.filter((q) => q.site === 'YOUTUBE'));
 			})
 			.catch((err) => {
 				console.log(err);
@@ -45,7 +45,7 @@ function Film() {
 							Назад
 						</div>
 					</div>
-					<CardMovie />
+					{film ? <CardMovie /> : <Preloader />}
 				</>
 			)}
 		</>
