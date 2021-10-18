@@ -10,11 +10,12 @@ const InitialState = {
 	loading: true,
 	trailer: [],
 	type: {
-		_currentType: 'TOP_100_POPULAR_FILMS',
-		_top_100: 'TOP_100_POPULAR_FILMS',
+		_currentType: '',
+		_top_100: 'top_100_popular_films',
 		_top_250: 'top_250_best_films',
-		_top_await: 'TOP_AWAIT_FILMS',
+		_top_await: 'top_await_films',
 	},
+	search: '',
 };
 
 export const StateProvider = ({ children }) => {
@@ -34,6 +35,10 @@ export const StateProvider = ({ children }) => {
 
 	state.getTrailerLink = (data) => {
 		dispatch({ type: 'GET_TRAILER', payload: data });
+	};
+
+	state.getSearch = (data) => {
+		dispatch({ type: 'SEARCH', payload: data });
 	};
 
 	return (

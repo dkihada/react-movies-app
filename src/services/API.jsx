@@ -5,9 +5,9 @@ const sendHeaders = {
 	'X-API-KEY': _apiKey,
 };
 
-const searchList = async (str) => {
+const searchList = async (str, page = 1) => {
 	const response = await fetch(
-		`${_apiBase}/v2.1/films/search-by-keyword?keyword=${str}`,
+		`${_apiBase}/v2.1/films/search-by-keyword?keyword=${str}&page=${page}`,
 		{ headers: sendHeaders }
 	);
 	return await response.json();

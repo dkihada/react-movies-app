@@ -7,7 +7,9 @@ export const reducer = (state, { type, payload }) => {
 		case 'GET_PAGES':
 			return { ...state, pages: payload || 0, loading: false };
 		case 'GET_TRAILER':
-			return { ...state, trailer: payload || 0, loading: false };
+			return { ...state, trailer: payload || [], loading: false };
+		case 'SEARCH':
+			return { ...state, search: payload || '', loading: false };
 		default:
 			return state;
 	}
