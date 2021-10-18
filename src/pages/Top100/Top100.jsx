@@ -1,17 +1,18 @@
 import React, { useContext, useEffect } from 'react';
 import { Movies } from '../../components/Movies/Movies';
 import { Preloader } from '../../components/Preloader/Preloader';
-import './Main.css';
-import { getTop100 } from '../../services/API';
+import { getTopMovies } from '../../services/API';
 
 import { StateContext } from '../../services/Context';
 import { Sidebar } from '../../layout/sidebar/Sidebar';
+import { Pagination } from '../../components/Pagination/Pagination';
 
-function Main() {
-	const { getMovies, loading, getFilm, getPages } = useContext(StateContext);
+function Top100() {
+	const { getMovies, loading, getFilm, getPages, type } =
+		useContext(StateContext);
 
 	useEffect(() => {
-		getTop100()
+		getTopMovies(type._top_100)
 			.then((data) => {
 				getMovies(data.films);
 				getPages(data.pagesCount);
@@ -32,11 +33,14 @@ function Main() {
 					<div className='sidebar'>
 						<Sidebar />
 					</div>
-					<Movies />
+					<div>
+						<Movies />
+						<Pagination typeMovies={type._top_100} />
+					</div>
 				</>
 			)}
 		</>
 	);
 }
 
-export { Main };
+export { Top100 };
