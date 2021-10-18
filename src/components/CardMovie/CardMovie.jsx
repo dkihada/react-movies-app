@@ -1,18 +1,19 @@
 import { useContext } from 'react';
 import { StateContext } from '../../services/Context';
-import './CardMovie.css';
+import styles from './CardMovie.module.css';
 import { Tag } from '../Tag/Tag';
 
 function CardMovie() {
 	const { film, trailer } = useContext(StateContext);
+
 	return (
-		<div className='card-movie'>
+		<div className={styles.card}>
 			<img src={film.posterUrlPreview} alt={film.nameRu} />
-			<div className='card-movie__body'>
+			<div className={styles.body}>
 				<h2>
 					{film.nameRu} ({film.year})
 				</h2>
-				<div className='card-movie__original-name'>
+				<div className={styles.original_name}>
 					{film.nameOriginal}{' '}
 					<span>
 						{film.ratingAgeLimits ? (
@@ -22,7 +23,7 @@ function CardMovie() {
 						) : null}
 					</span>
 				</div>
-				<div className='card-movie__slogan'>{film.slogan && film.slogan}</div>
+				<div className={styles.slogan}>{film.slogan && film.slogan}</div>
 				<div>
 					Страна:
 					{film.countries &&
@@ -41,6 +42,17 @@ function CardMovie() {
 					<br />
 					{film.description}
 				</p>
+				<div>
+					{' '}
+					<a
+						href={film.webUrl}
+						target='_blank'
+						rel='noreferrer'
+						className={styles.link_kinopoisk}
+					>
+						Смотреть на Кинопоиск
+					</a>
+				</div>
 			</div>
 			{/* {trailer
 				? trailer.map((vid) => (

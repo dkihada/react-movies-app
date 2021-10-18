@@ -1,0 +1,52 @@
+.card {
+	display: grid;
+	grid-template-columns: auto 1fr;
+
+	gap: 50px;
+}
+
+.card img {
+	width: 360px;
+
+	border-radius: 10px;
+	box-shadow: var(--primary-shadow);
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.slogan {
+	color: var(--primary);
+}
+
+.link_kinopoisk {
+	padding: 10px;
+
+	text-decoration: none;
+
+	color: #F60;
+	color: black;
+	border-radius: 5px;
+	background: #F60;
+}
+
+.link_kinopoisk:hover {
+	transition: all 0.4s;
+
+	background: rgba(255, 102, 0, 0.9);
+}
+
+@media (max-width: 768px) {
+	.card {
+		margin-top: 40px;
+		padding: 0 25px;
+		grid-template-columns: 1fr;
+	}
+
+	.card img {
+		width: 270px;
+	}
+}

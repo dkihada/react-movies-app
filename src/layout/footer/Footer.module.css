@@ -1,4 +1,4 @@
-.page-footer {
+.footer {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	justify-items: center;
@@ -14,6 +14,8 @@
 	box-shadow: 0 0 10px rgba(216 216 216 / 20%);
 }
 
-.page-footer a {
+.footer a {
+	text-decoration: none;
+
 	color: var(--white);
 }
